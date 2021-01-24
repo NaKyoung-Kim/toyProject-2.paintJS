@@ -1,0 +1,96 @@
+@import "reset.css";
+
+body {
+	background-color: #f5f5f5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 6vmin;
+	padding-bottom: 4vmin;
+}
+
+button {
+	all: unset;
+	font-weight: bold;
+	border-radius: 12px;
+	color: grey;
+	background-color: white;
+	height: 24px;
+	text-align: center;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.dayOrNight {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	position: absolute;
+	padding: 0 6px;
+	right: 5vmin;
+	top: 4vmin;
+	width: 72px;
+	line-height: 26px;
+}
+.dayOrNight.night {
+	background-color: #232f42;
+}
+.dayOrNight .iconify {
+	width: 18px;
+	height: 18px;
+	color: #fee227;
+}
+.dayOrNight div.text {
+	font-size: 14px;
+	color: honeydew;
+}
+
+.canvas {
+	background-color: white;
+	width: 65vmin;
+	height: 65vmin;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.controls > div {
+	margin-top: 3.5vmin;
+}
+
+.controls .brushSize {
+}
+
+.controls .btns button {
+	margin: 0 1vmin;
+	width: 56px;
+}
+.controls .btns button:active,
+button.dayOrNight:active {
+	transform: scale(0.98) translateY(2px);
+	box-shadow: 0 1px 2px 1px rgba(64, 60, 67, 0.16);
+}
+
+.controls .colors {
+	width: 65vmin;
+	display: flex;
+	justify-content: space-evenly;
+}
+.controls .colors .color {
+	width: 6.5vmin;
+	height: 6.5vmin;
+	border-radius: 50%;
+	background-color: honeydew;
+	cursor: pointer;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.controls .colors .color:active,
+.controls .colors .color.active {
+	transform: scale(0.98) translateY(3px);
+	box-shadow: 0 1px 2px 1px rgba(64, 60, 67, 0.16);
+}
