@@ -38,3 +38,22 @@ if(canvas){
   canvas.addEventListener("mouseup", StopPainting);
   canvas.addEventListener("mouseleave", StopPainting);
 }
+
+
+// color 선택
+let colorsArray = ["black", "white", "#F08364", "#F8C5A2", "#FEE1A2", "#C6DC92", "#87C2E1", "#7D84AA", "#B08CB8"];
+const color = document.getElementsByClassName("color");
+
+for(let i=0;i<9;i++){
+  Array.from(color)[i].style.backgroundColor = colorsArray[i];
+}
+
+function ColorHandler(event){
+  Array.from(color).forEach(color => color.classList.remove("active"));
+  event.target.classList.add("active");
+  ctx.strokeStyle = event.target.style.backgroundColor;
+}
+
+Array.from(color).forEach(function(color){
+  color.addEventListener("click", ColorHandler);
+})
