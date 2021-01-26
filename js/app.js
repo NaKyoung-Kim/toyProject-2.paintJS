@@ -57,3 +57,15 @@ function ColorHandler(event){
 Array.from(color).forEach(function(color){
   color.addEventListener("click", ColorHandler);
 })
+
+
+// Brush Size 설정. input[type="range"]
+const range = document.getElementById("js-range");
+
+function rangeHandler(event){
+  ctx.lineWidth = event.target.value;
+}
+
+if(range){
+  range.addEventListener("input", rangeHandler);
+}
