@@ -32,6 +32,7 @@ button {
 	right: 5vmin;
 	top: 4vmin;
 	width: 72px;
+	height: 28px;
 	line-height: 26px;
 }
 .dayOrNight.night {
@@ -47,10 +48,20 @@ button {
 	color: honeydew;
 }
 
+.canvas-wrapper {
+	background-color: lightgrey;
+	width: 63.8vmin;
+	min-width: 450px;
+	height: 63.8vmin;
+	min-height: 450px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .canvas {
 	background-color: white;
-	width: 65vmin;
-	height: 65vmin;
+	width: 450px;
+	height: 450px;
 }
 
 .controls {
@@ -63,8 +74,8 @@ button {
 	margin-top: 3.5vmin;
 }
 
-.controls .brushSize {
-}
+/* .controls .brushSize {
+} */
 
 .controls .btns button {
 	margin: 0 1vmin;
