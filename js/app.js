@@ -172,3 +172,15 @@ function dayOrNightHandler(){
 if(dayOrNight) {
   dayOrNight.addEventListener("click", dayOrNightHandler);
 } 
+
+/* ==================================================
+  Clear Canvas
+================================================== */
+const clearBtn = document.querySelector(".clearBtn");
+
+function clearTheCanvas(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+if(clearBtn) {
+  clearBtn.addEventListener("click", clearTheCanvas);
+}
