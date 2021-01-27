@@ -59,7 +59,7 @@ if(canvas){
 /* ==================================================
   Color 선택
 ================================================== */
-let colorsArray = ["black", "white", "#F08364", "#F8C5A2", "#FEE1A2", "#C6DC92", "#87C2E1", "#7D84AA", "#B08CB8"];
+let colorsArray = ["#2c2c2c", "white", "#F08364", "#F8C5A2", "#FEE1A2", "#C6DC92", "#87C2E1", "#7D84AA", "#B08CB8"];
 const color = document.getElementsByClassName("color");
 
 for(let i=0;i<9;i++){
@@ -137,3 +137,38 @@ function saveTheWork(){
 if(save){
   save.addEventListener("click", saveTheWork);
 }
+
+/* ==================================================
+  dayOrNight Mode 설정
+================================================== */
+const dayOrNight = document.querySelector(".dayOrNight");
+const dayOrNightText = document.querySelector(".dayOrNight .text");
+const dayIcon = document.querySelector("#icon-day");
+const nightIcon = document.querySelector("#icon-night");
+const body = document.querySelector("body");
+let day = true;
+
+function dayOrNightHandler(){
+  if(day) {
+    day = false;
+    dayOrNight.classList.remove("night");
+    dayOrNight.classList.add("day");
+    dayOrNightText.innerText = "DAY";
+    nightIcon.classList.remove("active");
+    dayIcon.classList.add("active");
+    body.style.backgroundColor = "#10131F";
+
+  } else {
+    day = true;
+    dayOrNight.classList.remove("day");
+    dayOrNight.classList.add("night");
+    dayOrNightText.innerText = "NIGHT";
+    dayIcon.classList.remove("active");
+    nightIcon.classList.add("active");
+    body.style.backgroundColor = "#f5f5f5";
+  }
+}
+
+if(dayOrNight) {
+  dayOrNight.addEventListener("click", dayOrNightHandler);
+} 
