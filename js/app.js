@@ -120,3 +120,20 @@ function fillTheCanvas(){
 if(canvas) {
   canvas.addEventListener("click", fillTheCanvas);
 }
+
+/* ==================================================
+  save. 저장하기 버튼
+================================================== */
+const save = document.querySelector(".saveBtn");
+
+function saveTheWork(){
+  const imageUrl = canvas.toDataURL("image/png");
+
+  const link = document.createElement("a");
+  link.href = imageUrl;
+  link.download = "princess👻";
+  link.click();
+}
+if(save){
+  save.addEventListener("click", saveTheWork);
+}
