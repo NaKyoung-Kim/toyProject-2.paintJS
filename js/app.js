@@ -40,11 +40,19 @@ function MouseOnCanvas(event){
   }
 }
 
+/* =====================================================
+  마우스 오른쪽 버튼 클릭 방지하기
+===================================================== */
+function preventRightClick(e){
+  e.preventDefault();
+}
+
 if(canvas){
   canvas.addEventListener("mousemove", MouseOnCanvas);
   canvas.addEventListener("mousedown", StartPainting);
   canvas.addEventListener("mouseup", StopPainting);
   canvas.addEventListener("mouseleave", StopPainting);
+  canvas.addEventListener("contextmenu", preventRightClick);
 }
 
 
