@@ -7,6 +7,8 @@ body {
 	align-items: center;
 	padding-top: 6vmin;
 	padding-bottom: 4vmin;
+
+	transition: all 0.3s ease-in-out;
 }
 
 button {
@@ -16,11 +18,12 @@ button {
 	color: grey;
 	background-color: white;
 	height: 24px;
+	padding-bottom: 6px;
 	text-align: center;
 	border: none;
 	outline: none;
 	cursor: pointer;
-	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 -4px 0 rgba(50, 50, 93, 0.31) inset, 0 -1px 0px rgba(0, 0, 0, 0.08) inset;
 }
 
 .dayOrNight {
@@ -32,20 +35,30 @@ button {
 	right: 5vmin;
 	top: 4vmin;
 	width: 72px;
-	height: 28px;
+	height: 30px;
 	line-height: 26px;
 }
 .dayOrNight.night {
 	background-color: #232f42;
+	color: honeydew;
+	transition: all 0.3s ease-in-out;
+}
+.dayOrNight.day {
+	background-color: #f5f5f5;
+	color: #232f42;
+	transition: all 0.3s ease-in-out;
 }
 .dayOrNight .iconify {
 	width: 18px;
 	height: 18px;
 	color: #fee227;
+	/* display: none; */
 }
+/* .dayOrNight .iconify.active {
+	display: flex;
+} */
 .dayOrNight div.text {
 	font-size: 14px;
-	color: honeydew;
 }
 
 .canvas-wrapper {
@@ -58,13 +71,13 @@ button {
 	justify-content: center;
 	align-items: center;
 	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(50, 50, 50, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .canvas {
 	background-color: white;
 	width: 450px;
 	height: 450px;
 	border-radius: 8px;
+	box-shadow: 0 -16px 0 rgba(50, 50, 50, 0.51) inset, 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .controls {
@@ -87,7 +100,7 @@ button {
 .controls .btns button:active,
 button.dayOrNight:active {
 	transform: scale(0.98) translateY(2px);
-	box-shadow: 0 1px 2px 1px rgba(64, 60, 67, 0.16);
+	box-shadow: 0 -1px 2px 1px rgba(64, 60, 67, 0.16);
 }
 
 .controls .colors {
@@ -101,10 +114,10 @@ button.dayOrNight:active {
 	border-radius: 50%;
 	background-color: honeydew;
 	cursor: pointer;
-	box-shadow: 0 6px 0 rgba(80, 80, 80, 0.31), 0 1px 3px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 -6px 0 rgba(80, 80, 80, 0.31) inset, 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .controls .colors .color:active,
 .controls .colors .color.active {
-	transform: scale(0.98) translateY(6px);
-	box-shadow: 0 1px 2px 1px rgba(64, 60, 67, 0.16);
+	transform: scale(0.98) translateY(3px);
+	box-shadow: none;
 }
