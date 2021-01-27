@@ -57,11 +57,14 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(50, 50, 50, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 .canvas {
 	background-color: white;
 	width: 450px;
 	height: 450px;
+	border-radius: 8px;
 }
 
 .controls {
@@ -79,7 +82,7 @@ button {
 
 .controls .btns button {
 	margin: 0 1vmin;
-	width: 56px;
+	width: 64px;
 }
 .controls .btns button:active,
 button.dayOrNight:active {

@@ -1,13 +1,21 @@
+/* ==================================================
+  기본값 설정
+================================================== */
 const canvas = document.getElementById("js-canvas");
 canvas.width = 450;
 canvas.height = 450;
 
 const ctx = canvas.getContext("2d");
-ctx.strokeStyle = "black";
+const DEFAULT_COLOR = "black";
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, 450, 450);
+ctx.strokeStyle = DEFAULT_COLOR;
+ctx.fillStyle = DEFAULT_COLOR;
 ctx.lineWidth = 2.5;
 ctx.lineCap = "round";
 
 let painting = false;
+let filling = false;
 
 function StopPainting(event){
   painting = false;
@@ -40,7 +48,9 @@ if(canvas){
 }
 
 
-// color 선택
+/* ==================================================
+  Color 선택
+================================================== */
 let colorsArray = ["black", "white", "#F08364", "#F8C5A2", "#FEE1A2", "#C6DC92", "#87C2E1", "#7D84AA", "#B08CB8"];
 const color = document.getElementsByClassName("color");
 
@@ -52,6 +62,7 @@ function ColorHandler(event){
   Array.from(color).forEach(color => color.classList.remove("active"));
   event.target.classList.add("active");
   ctx.strokeStyle = event.target.style.backgroundColor;
+  ctx.fillStyle = event.target.style.backgroundColor;
 }
 
 Array.from(color).forEach(function(color){
@@ -59,7 +70,9 @@ Array.from(color).forEach(function(color){
 })
 
 
-// Brush Size 설정. input[type="range"]
+/* ==================================================
+  Brush Size 설정. input[type="range"]
+================================================== */
 const range = document.getElementById("js-range");
 
 function rangeHandler(event){
@@ -68,4 +81,34 @@ function rangeHandler(event){
 
 if(range){
   range.addEventListener("input", rangeHandler);
+}
+
+
+/* ==================================================
+  paint or fill Mode 설정
+================================================== */
+const paintOrFill = document.querySelector(".fillBtn");
+
+function paintOrFillHandler(){
+  if(filling === true) {
+    filling = false;
+    paintOrFill.innerText = "FILL";
+  } else {
+    filling = true;
+    paintOrFill.innerText = "PAINT";
+  }
+}
+
+if(paintOrFill){
+  paintOrFill.addEventListener("click", paintOrFillHandler);
+}
+
+function fillTheCanvas(){
+  if(filling){
+    ctx.fillRect(0, 0, 450, 450);
+  }
+}
+
+if(canvas) {
+  canvas.addEventListener("click", fillTheCanvas);
 }
