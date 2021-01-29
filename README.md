@@ -3,6 +3,9 @@
 바닐라 js로 그림판 만들기
 
 
+https://a419802.github.io/VanillaJS_toyProject-2.paintJS/
+
+
 ![thumbnail](./thumbnail.png)
 
 
