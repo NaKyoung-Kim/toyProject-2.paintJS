@@ -77,7 +77,8 @@ button {
 	width: 450px;
 	height: 450px;
 	border-radius: 8px;
-	box-shadow: 0 -16px 0 rgba(50, 50, 50, 0.51) inset, 0 1px 3px rgba(0, 0, 0, 0.08);
+	/* box-shadow: 0 2px 2px rgba(50, 50, 50, 0.51) inset, 0 1px 3px rgba(0, 0, 0, 0.08); */
+	box-shadow: 0 4px 4px rgba(50, 50, 50, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .controls {
@@ -120,4 +121,19 @@ button.dayOrNight:active {
 .controls .colors .color.active {
 	transform: scale(0.98) translateY(3px);
 	box-shadow: none;
+}
+
+.pickr .pcr-button {
+	width: 6.5vmin !important;
+	height: 6.5vmin !important;
+	box-shadow: none;
+}
+.pickr .pcr-button,
+.pickr .pcr-button:focus {
+	outline: none;
+	border: none;
+}
+.pickr .pcr-button::after,
+.pickr .pcr-button::before {
+	border-radius: 50% !important;
 }

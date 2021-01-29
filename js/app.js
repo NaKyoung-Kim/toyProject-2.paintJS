@@ -57,18 +57,71 @@ if(canvas){
 
 
 /* ==================================================
+  Color Picker
+================================================== */
+const pickr = Pickr.create({
+  el: '.pickr',
+  theme: 'classic', // or 'monolith', or 'nano'
+
+  swatches: [
+      'rgba(244, 67, 54, 1)',
+      'rgba(233, 30, 99, 0.95)',
+      'rgba(156, 39, 176, 0.9)',
+      'rgba(103, 58, 183, 0.85)',
+      'rgba(63, 81, 181, 0.8)',
+      'rgba(33, 150, 243, 0.75)',
+      'rgba(3, 169, 244, 0.7)',
+      'rgba(0, 188, 212, 0.7)',
+      'rgba(0, 150, 136, 0.75)',
+      'rgba(76, 175, 80, 0.8)',
+      'rgba(139, 195, 74, 0.85)',
+      'rgba(205, 220, 57, 0.9)',
+      'rgba(255, 235, 59, 0.95)',
+      'rgba(255, 193, 7, 1)'
+  ],
+
+  components: {
+
+      // Main components
+      preview: true,
+      opacity: true,
+      hue: true,
+      default: '#fff',
+
+      // Input / output Options
+      interaction: {
+          hex: true,
+          rgba: true,
+          hsla: true,
+          hsva: true,
+          cmyk: true,
+          input: true,
+          clear: true,
+          save: true
+      }
+  }
+});
+
+
+/* ==================================================
   Color 선택
 ================================================== */
-let colorsArray = ["#2c2c2c", "white", "#F08364", "#F8C5A2", "#FEE1A2", "#C6DC92", "#87C2E1", "#7D84AA", "#B08CB8"];
+let colorsArray = ["#2c2c2c", "#F08364", "#F8C5A2", "#FEE1A2", "#C6DC92", "#87C2E1", "#7D84AA", "#B08CB8"];
 const color = document.getElementsByClassName("color");
+const colorpicker = document.querySelector(".pickr");
+const currentColor = document.querySelector(".pickr button");
+const colorSave = document.querySelector(".pcr-save");
 
-for(let i=0;i<9;i++){
+for(let i=0;i<8;i++){
   Array.from(color)[i].style.backgroundColor = colorsArray[i];
 }
 
 function ColorHandler(event){
   Array.from(color).forEach(color => color.classList.remove("active"));
+  colorpicker.classList.remove("active");
+
   event.target.classList.add("active");
+  
   ctx.strokeStyle = event.target.style.backgroundColor;
   ctx.fillStyle = event.target.style.backgroundColor;
 }
@@ -77,6 +130,15 @@ Array.from(color).forEach(function(color){
   color.addEventListener("click", ColorHandler);
 })
 
+function selectColorPicker(){
+  Array.from(color).forEach(color => color.classList.remove("active"));
+  colorpicker.classList.add("active");
+  ctx.strokeStyle = currentColor.style.color;
+  ctx.fillStyle = currentColor.style.color;
+}
+if(colorpicker){
+  colorSave.addEventListener("click", selectColorPicker);
+}
 
 /* ==================================================
   Brush Size 설정. input[type="range"]
