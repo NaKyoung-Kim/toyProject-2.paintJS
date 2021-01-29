@@ -3,6 +3,9 @@
 바닐라 js로 그림판 만들기
 
 
+![thumbnail](./thumbnail.png)
+
+
 1. 화면 상단 우측에 위치한 버튼으로 모드 변경이 가능합니다.
    기본모드(라이트 모드)/다크모드
    <button class = "dayOrNight" />
