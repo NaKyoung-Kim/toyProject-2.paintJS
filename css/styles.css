@@ -43,20 +43,22 @@ button {
 	color: honeydew;
 	transition: all 0.3s ease-in-out;
 }
+.dayOrNight.night #icon-day {
+	display: none;
+}
 .dayOrNight.day {
-	background-color: #f5f5f5;
+	background-color: #e4e4e4;
 	color: #232f42;
 	transition: all 0.3s ease-in-out;
+}
+.dayOrNight.day #icon-night {
+	display: none;
 }
 .dayOrNight .iconify {
 	width: 18px;
 	height: 18px;
-	color: #fee227;
-	/* display: none; */
+	color: #f7d239;
 }
-/* .dayOrNight .iconify.active {
-	display: flex;
-} */
 .dayOrNight div.text {
 	font-size: 14px;
 }
@@ -90,9 +92,6 @@ button {
 .controls > div {
 	margin-top: 3.5vmin;
 }
-
-/* .controls .brushSize {
-} */
 
 .controls .btns button {
 	margin: 0 1vmin;
