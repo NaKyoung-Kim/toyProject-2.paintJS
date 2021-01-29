@@ -1,0 +1,53 @@
+이번 토이프로젝트를 통해서 알게 된 점을 정리했다.
+
+1. mousemove 이벤트 리스너가 반환하는 event 객체에서
+  clientX, clientY는 전체 윈도우에서 마우스의 위치.
+  offsetX, offsetY는 캔버스 안에서 마우스의 위치
+
+2. canvas 요소 MDN 으로 사용방법 익히기
+  context를 생성한 후에 사용.
+  Q. getContext('3d'); 하면 어떤 기능들을 사용할 수 있나?
+
+  path를 시작한다 = line이 시작된다
+  painting 할 때는 path 그리기가 필요 없음.
+  painting 안할 때만 path 그리도록.
+
+  path를 그린다는 것은 선의 시작점을 만든다는 뜻
+  start path = start a line
+  painting=true일 때 path를 그리지 않음.
+  painting=flase 면 path를 만들어야 함.
+
+  클릭하고 나면 시작점부터 클릭한 곳까지 선을 만든다.
+
+3. 초기화 기능도 넣어볼까?
+  ctx.clearRect()를 사용해서 구현했다.
+
+4. 화살표 함수 => 에 대해서 정리해보자.
+
+  Array.from(color).forEach(function(color){
+    color.addEventListener("click", ColorHandler);
+  })
+
+  Array.from(color).forEach(color => color.addEventListener("click", ColorHandler));
+
+  둘은 같은 기능을 하는 코드지만 아래 코드는 화살표 함수를 사용해서 더 간결하게 표현했다.
+
+5. app.js line 115.
+  colorpicker 구현되면 i<8로 바꾸고
+  마지막 색상 버튼에 컬러피커 기능을 넣고 싶다.
+
+6. range는 input 이벤트에 반응한다.
+
+7. .getElementsByClassName()은 입력한 클래스 이름을 가진 html 요소들을 찾아 배열 형태로 리턴함.
+  .querySelector() 는 입력한 선택자로 특정할 수 있는 html 요소 중 첫 번째 요소를 리턴함.
+
+8. canvas의 배경색을 지정하지 않으면 한 번도 fill 하지 않은 결과물을 저장했을 때 배경이 투명한 결과물이 저장된다.
+
+9. 마우스 우클릭 방지 기능.
+  function A(e){
+    e.preventDefault();
+  }
+  canvas.addEventListener("contextmenu", A);
+
+10. save 버튼 구현하기
+  canvasAPI - toDataURL()
