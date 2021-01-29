@@ -216,8 +216,6 @@ function dayOrNightHandler(){
     dayOrNight.classList.remove("night");
     dayOrNight.classList.add("day");
     dayOrNightText.innerText = "DAY";
-    nightIcon.classList.remove("active");
-    dayIcon.classList.add("active");
     body.style.backgroundColor = "#10131F";
 
   } else {
@@ -225,8 +223,6 @@ function dayOrNightHandler(){
     dayOrNight.classList.remove("day");
     dayOrNight.classList.add("night");
     dayOrNightText.innerText = "NIGHT";
-    dayIcon.classList.remove("active");
-    nightIcon.classList.add("active");
     body.style.backgroundColor = "#f5f5f5";
   }
 }
