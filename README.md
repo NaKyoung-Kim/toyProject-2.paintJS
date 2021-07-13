@@ -3,11 +3,14 @@
 바닐라 js로 그림판 만들기
 
 
+# Demo
 https://a419802.github.io/VanillaJS_toyProject-2.paintJS/
 
 
 ![thumbnail](./thumbnail.png)
 
+
+# Features
 
 1. 화면 상단 우측에 위치한 버튼으로 모드 변경이 가능합니다.
    기본모드(라이트 모드)/다크모드
